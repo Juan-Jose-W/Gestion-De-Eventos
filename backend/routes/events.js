@@ -49,7 +49,7 @@ router.get('/:id', authMiddleware, async (req, res) => {
 });
 
 // Actualizar un evento
-router.put('/events/:id', authMiddleware, async (req, res) => { // Aplicar el middleware
+router.put('/:id', authMiddleware, async (req, res) => { // Aplicar el middleware
     try {
         const updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.status(200).json(updatedEvent);
